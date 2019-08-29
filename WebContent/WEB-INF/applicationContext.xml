@@ -10,10 +10,10 @@
 	<!-- Injection du jdbc -->
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<beans:property name="driverClassName" value="" />
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="" />
-		<beans:property name="username" value="" />
+			value="jdbc:mysql://localhost:3306/gestionContentieux?createDatabaseIfNotExist=true" />
+		<beans:property name="username" value="root" />
 		<beans:property name="password" value="" />
 	</beans:bean>
 	<!-- Injection Hibernate -->
@@ -22,10 +22,10 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="hibernateProperties">
 			<beans:props>
-				<beans:prop key="hibernate.dialect">
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
 				</beans:prop>
-				<beans:prop key="hibernate.show_sql"></beans:prop>
-				<beans:prop key="hibernate.hbm2ddl.auto">
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.hbm2ddl.auto">create
 				</beans:prop>
 			</beans:props>
 
