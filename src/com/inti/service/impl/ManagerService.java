@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.inti.dao.interfaces.IDAO;
 import com.inti.service.interfaces.IService;
 
 @Service
@@ -46,4 +47,4 @@ public class ManagerService<T> implements IService<T> {
 	
 	}
 
-}
+

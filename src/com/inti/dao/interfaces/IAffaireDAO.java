@@ -1,5 +1,8 @@
 package com.inti.dao.interfaces;
 
-public interface IAffaireDAO {
+import com.inti.entities.Affaire;
 
+public interface IAffaireDAO {
+ 
+	Affaire getAffaireByTitre(String titre);
 }
