@@ -24,8 +24,8 @@ public class AffaireController {
 	
 	
 	@RequestMapping(value="affaire", method = RequestMethod.POST)
-	public Affaire saveAffaire(@RequestBody Affaire affaire) {
-		return affaireService.save(affaire);
+	public void saveAffaire(@RequestBody Affaire affaire) {
+		affaireService.save(affaire);
 	}
 	
 	@RequestMapping(value="affaire")

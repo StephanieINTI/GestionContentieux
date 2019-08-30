@@ -6,7 +6,7 @@ import com.inti.entities.Affaire;
 
 
 public interface IService<T> {
-	Affaire save(T obj);
+	void save(T obj);
 
 	void update(T obj);
 
