@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,19 +17,18 @@ import com.inti.service.interfaces.IAffaireService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class AffaireController {
 	@Autowired
 	IAffaireService affaireService;
 	
 	
-	@RequestMapping(value="/affaire", method = RequestMethod.POST)
-	public ModelAndView saveAffaire (@ModelAttribute("a") Affaire affaire) {
-		affaireService.save(affaire);
-		return new ModelAndView("redirect:/affaire");
+	@RequestMapping(value="affaire", method = RequestMethod.POST)
+	public Affaire saveAffaire(@RequestBody Affaire affaire) {
+		return affaireService.save(affaire);
 	}
 	
-	@RequestMapping(value="/affaire")
+	@RequestMapping(value="affaire")
 	public List<Affaire> findAllAffaire () {
 		return affaireService.findAll(Affaire.class);
 	}
