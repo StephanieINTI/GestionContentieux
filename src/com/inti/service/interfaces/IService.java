@@ -2,9 +2,11 @@ package com.inti.service.interfaces;
 
 import java.util.List;
 
+import com.inti.entities.Affaire;
+
 
 public interface IService<T> {
-	void save(T obj);
+	Affaire save(T obj);
 
 	void update(T obj);
 

@@ -14,75 +14,66 @@ import javax.persistence.OneToMany;
 public class Tribunal {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
- private Long IdTribunal;
- private String adresse;
- private Double fax;
- private Double tel;
- private String region;
- 
- @OneToMany(mappedBy ="tribunal", fetch=FetchType.LAZY) 
-	private Set<Tache> listTache= new HashSet<>();
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long IdTribunal;
+	private String adresse;
+	private Double fax;
+	private Double tel;
+	private String region;
 
- 
- 
-public Tribunal() {
-	
-}
+	@OneToMany(mappedBy = "tribunal", fetch = FetchType.EAGER)
+	private Set<Tache> listTache = new HashSet<>();
 
-public Long getIdTribunal() {
-	return IdTribunal;
-}
+	public Tribunal() {
 
-public void setIdTribunal(Long idTribunal) {
-	IdTribunal = idTribunal;
-}
+	}
 
-public String getAdresse() {
-	return adresse;
-}
+	public Long getIdTribunal() {
+		return IdTribunal;
+	}
 
-public void setAdresse(String adresse) {
-	this.adresse = adresse;
-}
+	public void setIdTribunal(Long idTribunal) {
+		IdTribunal = idTribunal;
+	}
 
-public Double getFax() {
-	return fax;
-}
+	public String getAdresse() {
+		return adresse;
+	}
 
-public void setFax(Double fax) {
-	this.fax = fax;
-}
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
 
-public Double getTel() {
-	return tel;
-}
+	public Double getFax() {
+		return fax;
+	}
 
-public void setTel(Double tel) {
-	this.tel = tel;
-}
+	public void setFax(Double fax) {
+		this.fax = fax;
+	}
 
-public String getRegion() {
-	return region;
-}
+	public Double getTel() {
+		return tel;
+	}
 
-public void setRegion(String region) {
-	this.region = region;
-}
+	public void setTel(Double tel) {
+		this.tel = tel;
+	}
 
-public Set<Tache> getListTache() {
-	return listTache;
-}
+	public String getRegion() {
+		return region;
+	}
 
-public void setListTache(Set<Tache> listTache) {
-	this.listTache = listTache;
-}
+	public void setRegion(String region) {
+		this.region = region;
+	}
 
-@Override
-public String toString() {
-	return "Tribunal [IdTribunal=" + IdTribunal + ", adresse=" + adresse + ", fax=" + fax + ", tel=" + tel + ", region="
-			+ region + "]";
-}
- 
- 
+	public Set<Tache> getListTache() {
+		return listTache;
+	}
+
+	public void setListTache(Set<Tache> listTache) {
+		this.listTache = listTache;
+	}
+
 }

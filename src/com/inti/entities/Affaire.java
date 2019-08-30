@@ -13,21 +13,21 @@ import javax.persistence.OneToMany;
 @Entity
 public class Affaire {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long IdAffaire;
 	private String reference;
 	private String titre;
 	private String description;
 	private int statut;
-  
-	@OneToMany(mappedBy ="affaire", fetch=FetchType.LAZY) 
-	private Set<Tache> listTache= new HashSet<>();
 
-	@OneToMany(mappedBy ="affaire", fetch=FetchType.LAZY) 
-	private Set<Document> listDocument= new HashSet<>();
-	
+	@OneToMany(mappedBy = "affaire", fetch = FetchType.LAZY)
+	private Set<Tache> listTache = new HashSet<>();
+
+	@OneToMany(mappedBy = "affaire", fetch = FetchType.LAZY)
+	private Set<Document> listDocument = new HashSet<>();
+
 	public Affaire() {
-		
+
 	}
 
 	public Long getIdAffaire() {
@@ -78,7 +78,6 @@ public class Affaire {
 		this.listTache = listTache;
 	}
 
-	
 	public Set<Document> getListDocument() {
 		return listDocument;
 	}
@@ -87,12 +86,4 @@ public class Affaire {
 		this.listDocument = listDocument;
 	}
 
-	@Override
-	public String toString() {
-		return "Affaire [IdAffaire=" + IdAffaire + ", reference=" + reference + ", titre=" + titre + ", description="
-				+ description + ", statut=" + statut + "]";
-	}
-	
-	
-	
 }
