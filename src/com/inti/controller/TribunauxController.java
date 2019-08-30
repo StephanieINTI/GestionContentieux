@@ -20,7 +20,7 @@ public class TribunauxController {
 	ITribunalService tribunalService;
 	
 	
-	@RequestMapping(value = "/tibunal")
+	@RequestMapping(value = "/tribunal")
 	public List<Tribunal> findAllTribunal() {
 		return  tribunalService.findAll(Tribunal.class);
 		
