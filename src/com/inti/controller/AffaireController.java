@@ -33,7 +33,6 @@ public class AffaireController {
 		return affaireService.findAll(Affaire.class);
 	}
 	
-	@RequestMapping(value="affaire/{titre}")
 	public Affaire getAffaireByTitre(@PathVariable("titre") String titre) {
 		return affaireService.getAffaireByTitre(titre);
 		

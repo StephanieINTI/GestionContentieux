@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 public class Document {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idDocument;
+	private Long IdDocument;
 
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
@@ -32,11 +32,11 @@ public class Document {
 	}
 
 	public Long getIdDocument() {
-		return idDocument;
+		return IdDocument;
 	}
 
 	public void setIdDocument(Long idDocument) {
-		this.idDocument = idDocument;
+		IdDocument = idDocument;
 	}
 
 	public Date getDateCreation() {

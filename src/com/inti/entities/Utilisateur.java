@@ -6,12 +6,9 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
@@ -23,25 +20,22 @@ public class Utilisateur implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idUtilisateur;
 	private String email;
 	private String nomUtilisateur;
 	private String prenomUtilisateur;
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "profil", joinColumns = {
-			@JoinColumn(name = "id_utilisateur", referencedColumnName = "idUtilisateur") }, inverseJoinColumns = {
-					@JoinColumn(name = "id_role", table = "role", referencedColumnName = "idRole") })
-	Set<Role> listRoles = new HashSet<>();
+	@ManyToMany
+	Set <Role> roles = new HashSet <>();
 	@OneToMany(mappedBy = "utilisateur")
-	private Set<Tache> listTaches = new HashSet<Tache>();
-	@Column(unique = true)
+	private  Set <Tache> listTaches = new HashSet <Tache>();
+	@Column(unique=true)
 	private String username;
 	private String password;
 	private boolean enabled = true;
 
 	public Utilisateur() {
-
+		
 	}
 
 	public Long getIdUtilisateur() {
@@ -80,12 +74,12 @@ public class Utilisateur implements Serializable {
 		return listTaches;
 	}
 
-	public Set<Role> getListRoles() {
-		return listRoles;
+	public Set<Role> getRoles() {
+		return roles;
 	}
 
-	public void setListRoles(Set<Role> listRoles) {
-		this.listRoles = listRoles;
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 	public void setListTaches(Set<Tache> listTaches) {
@@ -115,5 +109,5 @@ public class Utilisateur implements Serializable {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-
+	
 }

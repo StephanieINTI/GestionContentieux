@@ -14,28 +14,28 @@ import javax.persistence.OneToMany;
 public class Affaire {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idAffaire;
+	private Long IdAffaire;
 	private String reference;
 	private String titre;
 	private String description;
 	private int statut;
 
-	@OneToMany(mappedBy = "affaire", fetch = FetchType.EAGER)
-	private Set<Tache> listTaches = new HashSet<>();
+	@OneToMany(mappedBy = "affaire", fetch = FetchType.LAZY)
+	private Set<Tache> listTache = new HashSet<>();
 
-	@OneToMany(mappedBy = "affaire", fetch = FetchType.EAGER)
-	private Set<Document> listDocuments = new HashSet<>();
+	@OneToMany(mappedBy = "affaire", fetch = FetchType.LAZY)
+	private Set<Document> listDocument = new HashSet<>();
 
 	public Affaire() {
 
 	}
 
 	public Long getIdAffaire() {
-		return idAffaire;
+		return IdAffaire;
 	}
 
 	public void setIdAffaire(Long idAffaire) {
-		this.idAffaire = idAffaire;
+		IdAffaire = idAffaire;
 	}
 
 	public String getReference() {
@@ -70,22 +70,20 @@ public class Affaire {
 		this.statut = statut;
 	}
 
-	public Set<Tache> getListTaches() {
-		return listTaches;
+	public Set<Tache> getListTache() {
+		return listTache;
 	}
 
-	public void setListTaches(Set<Tache> listTaches) {
-		this.listTaches = listTaches;
+	public void setListTache(Set<Tache> listTache) {
+		this.listTache = listTache;
 	}
 
-	public Set<Document> getListDocuments() {
-		return listDocuments;
+	public Set<Document> getListDocument() {
+		return listDocument;
 	}
 
-	public void setListDocuments(Set<Document> listDocuments) {
-		this.listDocuments = listDocuments;
+	public void setListDocument(Set<Document> listDocument) {
+		this.listDocument = listDocument;
 	}
-
-	
 
 }

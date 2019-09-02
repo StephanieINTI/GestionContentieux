@@ -38,8 +38,6 @@
 	<context:component-scan base-package="com.inti.dao.impl" />
 	<context:component-scan base-package="com.inti.service.impl" />
 	<context:component-scan base-package="com.inti.controller" />
-	<context:component-scan base-package="com.inti.config" />
-	
 	<!-- Déclarer le gestionnaire de transactions pour permettre une utilisation 
 		de l'annotation @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
