@@ -28,6 +28,12 @@ public class Tribunal {
 
 	}
 
+	
+	public Tribunal(Long idTribunal) {
+		IdTribunal = idTribunal;
+	}
+
+
 	public Long getIdTribunal() {
 		return IdTribunal;
 	}

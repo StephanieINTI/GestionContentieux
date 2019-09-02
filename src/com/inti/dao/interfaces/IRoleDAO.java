@@ -1,5 +1,7 @@
 package com.inti.dao.interfaces;
 
-public interface IRoleDAO {
+import com.inti.entities.Role;
+
+public interface IRoleDAO extends IDAO<Role>{
 
 }

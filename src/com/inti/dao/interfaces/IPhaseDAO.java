@@ -1,5 +1,7 @@
 package com.inti.dao.interfaces;
 
-public interface IPhaseDAO {
+import com.inti.entities.Phase;
+
+public interface IPhaseDAO extends IDAO<Phase> {
 
 }

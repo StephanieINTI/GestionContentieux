@@ -1,5 +1,7 @@
 package com.inti.dao.interfaces;
 
-public interface IDocumentDAO {
+import com.inti.entities.Document;
+
+public interface IDocumentDAO extends IDAO<Document>{
 
 }

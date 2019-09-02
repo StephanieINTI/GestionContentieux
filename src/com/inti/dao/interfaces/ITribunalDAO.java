@@ -1,5 +1,7 @@
 package com.inti.dao.interfaces;
 
-public interface ITribunalDAO {
+import com.inti.entities.Tribunal;
+
+public interface ITribunalDAO extends IDAO<Tribunal>{
 
 }

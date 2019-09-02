@@ -1,5 +1,7 @@
 package com.inti.dao.interfaces;
 
-public interface ITacheDAO {
+import com.inti.entities.Tache;
+
+public interface ITacheDAO{
 
 }
