@@ -44,6 +44,13 @@ public class Utilisateur implements Serializable {
 
 	}
 
+	
+	public Utilisateur(Long idUtilisateur) {
+		
+		this.idUtilisateur = idUtilisateur;
+	}
+
+
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
 	}

@@ -30,6 +30,12 @@ public class Affaire {
 
 	}
 
+	
+	public Affaire(Long idAffaire) {
+		IdAffaire = idAffaire;
+	}
+
+
 	public Long getIdAffaire() {
 		return idAffaire;
 	}

@@ -29,6 +29,14 @@ public class Tribunal {
 	}
 
 	
+<<<<<<< HEAD
+=======
+	public Tribunal(Long idTribunal) {
+		IdTribunal = idTribunal;
+	}
+
+
+>>>>>>> master
 	public Long getIdTribunal() {
 		return idTribunal;
 	}
