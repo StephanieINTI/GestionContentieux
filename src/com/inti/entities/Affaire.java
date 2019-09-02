@@ -32,7 +32,7 @@ public class Affaire {
 
 	
 	public Affaire(Long idAffaire) {
-		IdAffaire = idAffaire;
+		idAffaire = idAffaire;
 	}
 
 
