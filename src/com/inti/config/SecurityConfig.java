@@ -24,6 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private IAppUserDetailsService appUserDetailsService;
+
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
