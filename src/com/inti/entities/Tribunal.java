@@ -15,26 +15,29 @@ public class Tribunal {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IdTribunal;
+	private Long idTribunal;
 	private String adresse;
 	private Double fax;
 	private Double tel;
 	private String region;
 
 	@OneToMany(mappedBy = "tribunal", fetch = FetchType.EAGER)
-	private Set<Tache> listTache = new HashSet<>();
+	private Set<Tache> listTaches = new HashSet<>();
 
 	public Tribunal() {
 
 	}
 
+	
 	public Long getIdTribunal() {
-		return IdTribunal;
+		return idTribunal;
 	}
 
+
 	public void setIdTribunal(Long idTribunal) {
-		IdTribunal = idTribunal;
+		this.idTribunal = idTribunal;
 	}
+
 
 	public String getAdresse() {
 		return adresse;
@@ -68,12 +71,16 @@ public class Tribunal {
 		this.region = region;
 	}
 
-	public Set<Tache> getListTache() {
-		return listTache;
+
+	public Set<Tache> getListTaches() {
+		return listTaches;
 	}
 
-	public void setListTache(Set<Tache> listTache) {
-		this.listTache = listTache;
+
+	public void setListTaches(Set<Tache> listTaches) {
+		this.listTaches = listTaches;
 	}
+
+	
 
 }

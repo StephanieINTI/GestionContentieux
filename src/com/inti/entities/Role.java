@@ -21,9 +21,7 @@ public class Role implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idRole;
 	private String libelle;
-	@ManyToMany
-	Set<Utilisateur> utilisateurs = new HashSet<>();
-
+	
 	public Role() {
 
 	}
