@@ -90,12 +90,7 @@
 			<version>${springsecurity.version}</version>
 		</dependency>
 
-		<!-- Spring boot -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot</artifactId>
-			<version>1.5.15.RELEASE</version>
-		</dependency>
+		
 	</dependencies>
 
 	<build>
