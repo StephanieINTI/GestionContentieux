@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.inti.entities.Utilisateur;
 import com.inti.service.interfaces.IUtilisateurService;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/login")
 public class LoginController {

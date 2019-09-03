@@ -34,13 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.csrf().disable()
 			.authorizeRequests()
-			// Restriction des interfaces (à adapter selon le besoin)
 				.antMatchers("/**").hasRole("ADMIN")
-				.antMatchers("/tache/**").hasRole("AVOCAT")
-				.antMatchers("/affaire/**").hasRole("AVOCAT")
-				.antMatchers("/tribunal/**").hasRole("AVOCAT")
-				.antMatchers("/dashboard/**").hasRole("AVOCAT")
-				.antMatchers("/userAvocat/**").hasRole("AVOCAT")
 				.antMatchers("/login*").permitAll()
 				.anyRequest().authenticated()
 			.and()
@@ -62,10 +56,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
     public CorsConfigurationSource corsConfigurationSource() {
         final CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-        configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
+        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedMethods(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
