@@ -33,7 +33,7 @@ public class Utilisateur implements Serializable {
 			@JoinColumn(name = "id_utilisateur", referencedColumnName = "idUtilisateur") }, inverseJoinColumns = {
 					@JoinColumn(name = "id_role", table = "role", referencedColumnName = "idRole") })
 	Set<Role> listRoles = new HashSet<>();
-	@OneToMany(mappedBy = "utilisateur")
+	@OneToMany(mappedBy = "utilisateur",fetch = FetchType.EAGER)
 	private Set<Tache> listTaches = new HashSet<Tache>();
 	@Column(unique = true)
 	private String username;

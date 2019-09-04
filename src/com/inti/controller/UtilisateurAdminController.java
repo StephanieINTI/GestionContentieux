@@ -25,7 +25,7 @@ public class UtilisateurAdminController {
 		utilisateurService.save(utilisateur);;
 	}
 	
-	@RequestMapping(value="userrAdmin")
+	@RequestMapping(value="userAdmin")
 	public List<Utilisateur> findAllUtilisateur () {
 		return utilisateurService.findAll(Utilisateur.class);
 	}

@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.web.cors.CorsConfiguration;
@@ -30,17 +31,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(appUserDetailsService);
 	}
+	public void configure(WebSecurity web)throws Exception {
+		web.ignoring().antMatchers("/userAdmin/**", "/userAvocat/**", "/affaire/**", "/tribunal/**", "/tache/**");
+	}
+	
 	protected void configure(final HttpSecurity http) throws Exception {
 		http
 			.csrf().disable()
 			.authorizeRequests()
-			// Restriction des interfaces (à adapter selon le besoin)
-				.antMatchers("/**").hasRole("ADMIN")
-				.antMatchers("/tache/**").hasRole("AVOCAT")
+				.antMatchers("/tribunal/**").hasRole("ADMIN")
 				.antMatchers("/affaire/**").hasRole("AVOCAT")
-				.antMatchers("/tribunal/**").hasRole("AVOCAT")
-				.antMatchers("/dashboard/**").hasRole("AVOCAT")
-				.antMatchers("/userAvocat/**").hasRole("AVOCAT")
 				.antMatchers("/login*").permitAll()
 				.anyRequest().authenticated()
 			.and()
@@ -62,10 +62,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
     public CorsConfigurationSource corsConfigurationSource() {
         final CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-        configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
+        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedMethods(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;

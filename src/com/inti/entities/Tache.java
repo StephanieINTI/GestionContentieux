@@ -33,7 +33,6 @@ public class Tache implements Serializable {
 	private String description;
 	private boolean statutAudience;
 	@ManyToOne
-	
 	private Utilisateur utilisateur;
 	@ManyToOne
 	private Affaire affaire;
