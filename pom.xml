@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<springsecurity.version>4.2.7.RELEASE</springsecurity.version>
+		<springsecurity.version>5.2.10.RELEASE</springsecurity.version>
 	</properties>
 	<dependencies>
 		<dependency>
